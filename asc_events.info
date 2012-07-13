@@ -23,3 +23,4 @@ features[field][] = node-event-field_tags
 features[node][] = event
 features[taxonomy][] = tags
 features[views_view][] = events
+stylesheets[all][] = events.css
