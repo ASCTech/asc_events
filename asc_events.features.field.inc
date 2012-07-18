@@ -10,7 +10,7 @@
 function asc_events_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-asc_event-body'
+  // Exported field: 'node-asc_event-body'.
   $fields['node-asc_event-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function asc_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -90,7 +91,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_datetime'
+  // Exported field: 'node-asc_event-field_ascevents_datetime'.
   $fields['node-asc_event-field_ascevents_datetime'] = array(
     'field_config' => array(
       'active' => '1',
@@ -100,6 +101,7 @@ function asc_events_field_default_fields() {
       'field_name' => 'field_ascevents_datetime',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
@@ -193,7 +195,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_image'
+  // Exported field: 'node-asc_event-field_ascevents_image'.
   $fields['node-asc_event-field_ascevents_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -214,6 +216,7 @@ function asc_events_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -264,6 +267,7 @@ function asc_events_field_default_fields() {
       'required' => 1,
       'settings' => array(
         'alt_field' => 1,
+        'default_image' => 0,
         'file_directory' => 'events-images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -280,12 +284,13 @@ function asc_events_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            0 => 0,
             'audio' => 0,
+            0 => 0,
             'default' => 0,
             'image' => 'image',
             'video' => 0,
           ),
+          'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -294,7 +299,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_location'
+  // Exported field: 'node-asc_event-field_ascevents_location'.
   $fields['node-asc_event-field_ascevents_location'] = array(
     'field_config' => array(
       'active' => '1',
@@ -308,6 +313,7 @@ function asc_events_field_default_fields() {
           0 => 'lid',
         ),
       ),
+      'locked' => '0',
       'module' => 'location_cck',
       'settings' => array(
         'gmap_macro' => '[gmap ]',
@@ -532,8 +538,14 @@ function asc_events_field_default_fields() {
           'label' => 'above',
           'module' => 'location_cck',
           'settings' => array(),
-          'type' => 'location_map',
+          'type' => 'location_default',
           'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
@@ -553,7 +565,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_terms_1'
+  // Exported field: 'node-asc_event-field_ascevents_terms_1'.
   $fields['node-asc_event-field_ascevents_terms_1'] = array(
     'field_config' => array(
       'active' => '1',
@@ -574,6 +586,7 @@ function asc_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -606,6 +619,12 @@ function asc_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '4',
         ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'node',
       'field_name' => 'field_ascevents_terms_1',
@@ -624,7 +643,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_terms_2'
+  // Exported field: 'node-asc_event-field_ascevents_terms_2'.
   $fields['node-asc_event-field_ascevents_terms_2'] = array(
     'field_config' => array(
       'active' => '1',
@@ -645,6 +664,7 @@ function asc_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -677,6 +697,12 @@ function asc_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '5',
         ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'node',
       'field_name' => 'field_ascevents_terms_2',
@@ -695,7 +721,7 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-asc_event-field_ascevents_terms_3'
+  // Exported field: 'node-asc_event-field_ascevents_terms_3'.
   $fields['node-asc_event-field_ascevents_terms_3'] = array(
     'field_config' => array(
       'active' => '1',
@@ -716,6 +742,7 @@ function asc_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -747,6 +774,12 @@ function asc_events_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '6',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
