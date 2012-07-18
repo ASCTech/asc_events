@@ -5,6 +5,16 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function asc_events_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function asc_events_views_api() {
@@ -16,7 +26,7 @@ function asc_events_views_api() {
  */
 function asc_events_node_info() {
   $items = array(
-    'event' => array(
+    'asc_event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
       'description' => t('Events for your organization.'),

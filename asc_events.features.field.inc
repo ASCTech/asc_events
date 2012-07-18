@@ -10,8 +10,8 @@
 function asc_events_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-event-body'
-  $fields['node-event-body'] = array(
+  // Exported field: 'node-asc_event-body'
+  $fields['node-asc_event-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -39,12 +39,19 @@ function asc_events_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'event',
+      'bundle' => 'asc_event',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
+        'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
@@ -83,8 +90,8 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_ascevents_datetime'
-  $fields['node-event-field_ascevents_datetime'] = array(
+  // Exported field: 'node-asc_event-field_ascevents_datetime'
+  $fields['node-asc_event-field_ascevents_datetime'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -113,11 +120,24 @@ function asc_events_field_default_fields() {
       'type' => 'datetime',
     ),
     'field_instance' => array(
-      'bundle' => 'event',
+      'bundle' => 'asc_event',
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '0',
+        ),
+        'full' => array(
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
@@ -173,8 +193,8 @@ function asc_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_ascevents_image'
-  $fields['node-event-field_ascevents_image'] = array(
+  // Exported field: 'node-asc_event-field_ascevents_image'
+  $fields['node-asc_event-field_ascevents_image'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -203,16 +223,26 @@ function asc_events_field_default_fields() {
       'type' => 'image',
     ),
     'field_instance' => array(
-      'bundle' => 'event',
+      'bundle' => 'asc_event',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Image associated with your event.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'medium',
+            'image_style' => 'square_thumbnail',
+          ),
+          'type' => 'image',
+          'weight' => '2',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'thumbnail',
           ),
           'type' => 'image',
           'weight' => '1',
@@ -231,7 +261,7 @@ function asc_events_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_ascevents_image',
       'label' => 'Image',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'alt_field' => 1,
         'file_directory' => 'events-images',
@@ -244,30 +274,293 @@ function asc_events_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'imagefield_crop',
+        'module' => 'media',
         'settings' => array(
-          'collapsible' => '1',
-          'croparea' => '250x250',
-          'enforce_minimum' => 1,
-          'enforce_ratio' => 1,
-          'preview_image_style' => 'medium',
+          'allowed_schemes' => array(
+            'public' => 'public',
+          ),
+          'allowed_types' => array(
+            0 => 0,
+            'audio' => 0,
+            'default' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
           'progress_indicator' => 'throbber',
-          'resolution' => '250x250',
         ),
-        'type' => 'imagefield_crop_widget',
+        'type' => 'media_generic',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_event-field_ascevents_location'
+  $fields['node-asc_event-field_ascevents_location'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ascevents_location',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'lid' => array(
+          0 => 'lid',
+        ),
+      ),
+      'module' => 'location_cck',
+      'settings' => array(
+        'gmap_macro' => '[gmap ]',
+        'gmap_marker' => 'drupal',
+        'location_settings' => array(
+          'display' => array(
+            'hide' => array(
+              'additional' => 'additional',
+              'city' => 'city',
+              'coords' => 'coords',
+              'country' => 'country',
+              'country_name' => 'country_name',
+              'locpick' => 'locpick',
+              'map_link' => 0,
+              'name' => 0,
+              'postal_code' => 'postal_code',
+              'province' => 'province',
+              'province_name' => 'province_name',
+              'street' => 'street',
+            ),
+          ),
+          'form' => array(
+            'fields' => array(
+              'additional' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '6',
+              ),
+              'city' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '8',
+              ),
+              'country' => array(
+                'collect' => '1',
+                'default' => 'us',
+                'weight' => '14',
+              ),
+              'locpick' => array(
+                'collect' => '1',
+                'weight' => '20',
+              ),
+              'name' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '2',
+              ),
+              'postal_code' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '12',
+              ),
+              'province' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '10',
+                'widget' => 'autocomplete',
+              ),
+              'street' => array(
+                'collect' => '1',
+                'default' => '',
+                'weight' => '4',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'location',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_event',
+      'default_value' => array(
+        0 => array(
+          'location_settings' => array(
+            'display' => array(
+              'hide' => array(
+                'additional' => 'additional',
+                'city' => 'city',
+                'coords' => 'coords',
+                'country' => 'country',
+                'country_name' => 'country_name',
+                'locpick' => 'locpick',
+                'map_link' => 0,
+                'name' => 0,
+                'postal_code' => 'postal_code',
+                'province' => 'province',
+                'province_name' => 'province_name',
+                'street' => 'street',
+              ),
+            ),
+            'form' => array(
+              'fields' => array(
+                'additional' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '6',
+                ),
+                'city' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '8',
+                ),
+                'country' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => 'us',
+                  'weight' => '14',
+                ),
+                'delete_location' => array(
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                ),
+                'is_primary' => array(
+                  'default' => 0,
+                ),
+                'latitude' => array(
+                  'default' => 0,
+                ),
+                'lid' => array(
+                  'default' => FALSE,
+                ),
+                'locpick' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => FALSE,
+                  'nodiff' => TRUE,
+                  'weight' => '20',
+                ),
+                'longitude' => array(
+                  'default' => 0,
+                ),
+                'name' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '2',
+                ),
+                'postal_code' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '12',
+                ),
+                'province' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '10',
+                  'widget' => 'autocomplete',
+                ),
+                'source' => array(
+                  'default' => 0,
+                ),
+                'street' => array(
+                  '#parents' => array(
+                    0 => 'field_ascevents_location',
+                    1 => 'und',
+                    2 => 0,
+                  ),
+                  'collect' => '1',
+                  'default' => '',
+                  'weight' => '4',
+                ),
+              ),
+            ),
+          ),
+          'name' => 'TBA',
+          'street' => '',
+          'additional' => '',
+          'city' => '',
+          'province' => '',
+          'postal_code' => '',
+          'country' => 'us',
+          'locpick' => array(
+            'user_latitude' => '',
+            'user_longitude' => '',
+          ),
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'location_cck',
+          'settings' => array(),
+          'type' => 'location_default',
+          'weight' => '1',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'location_cck',
+          'settings' => array(),
+          'type' => 'location_map',
+          'weight' => '3',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ascevents_location',
+      'label' => 'Location',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'location_cck',
+        'settings' => array(),
+        'type' => 'location',
         'weight' => '2',
       ),
     ),
   );
 
-  // Exported field: 'node-event-field_tags'
-  $fields['node-event-field_tags'] = array(
+  // Exported field: 'node-asc_event-field_ascevents_terms_1'
+  $fields['node-asc_event-field_ascevents_terms_1'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_tags',
+      'field_name' => 'field_ascevents_terms_1',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -285,8 +578,8 @@ function asc_events_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'vocabulary' => 'tags',
-            'parent' => 0,
+            'vocabulary' => 'event_terms_1',
+            'parent' => '0',
           ),
         ),
       ),
@@ -294,7 +587,7 @@ function asc_events_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'event',
+      'bundle' => 'asc_event',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -304,31 +597,171 @@ function asc_events_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '3',
+          'weight' => '4',
         ),
-        'teaser' => array(
+        'full' => array(
           'label' => 'hidden',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '3',
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_tags',
-      'label' => 'Tags',
+      'field_name' => 'field_ascevents_terms_1',
+      'label' => 'Event Terms 1',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'taxonomy',
-        'settings' => array(
-          'autocomplete_path' => 'taxonomy/autocomplete',
-          'size' => 60,
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_event-field_ascevents_terms_2'
+  $fields['node-asc_event-field_ascevents_terms_2'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ascevents_terms_2',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
         ),
-        'type' => 'taxonomy_autocomplete',
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'event_terms_2',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '5',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '5',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ascevents_terms_2',
+      'label' => 'Event Terms 2',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
         'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-asc_event-field_ascevents_terms_3'
+  $fields['node-asc_event-field_ascevents_terms_3'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ascevents_terms_3',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'event_terms_3',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'asc_event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '6',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '6',
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ascevents_terms_3',
+      'label' => 'Event Terms 3',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '7',
       ),
     ),
   );
@@ -337,8 +770,12 @@ function asc_events_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Date');
   t('Description');
+  t('Event Terms 1');
+  t('Event Terms 2');
+  t('Event Terms 3');
   t('Image');
-  t('Tags');
+  t('Image associated with your event.');
+  t('Location');
 
   return $fields;
 }
