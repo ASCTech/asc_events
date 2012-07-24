@@ -23,6 +23,7 @@ function asc_events_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events';
+  $handler->display->display_options['css_class'] = 'features';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = '+';
@@ -386,48 +387,12 @@ function asc_events_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['id'] = 'field_ascevents_datetime_2';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['table'] = 'field_data_field_ascevents_datetime';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['field'] = 'field_ascevents_datetime';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['label'] = '';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['max_length'] = '10';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['word_boundary'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['ellipsis'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['strip_tags'] = 1;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['element_label_type'] = '0';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['element_default_classes'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['settings'] = array(
-    'format_type' => 'date_only',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  $handler->display->display_options['fields']['field_ascevents_datetime_2']['field_api_classes'] = 0;
-  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_ascevents_datetime']['id'] = 'field_ascevents_datetime';
   $handler->display->display_options['fields']['field_ascevents_datetime']['table'] = 'field_data_field_ascevents_datetime';
   $handler->display->display_options['fields']['field_ascevents_datetime']['field'] = 'field_ascevents_datetime';
   $handler->display->display_options['fields']['field_ascevents_datetime']['label'] = '';
   $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['text'] = '<img src=\'http://standarddemo-d.asc.ohio-state.edu/profiles/asc/themes/q7/datebox/datebox.png.php?t=4&d=[field_ascevents_datetime_2]\' alt="[title]" title="[title]" width="40" height="45" />';
+  $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['text'] = '<img src=\'http://standarddemo-d.asc.ohio-state.edu/profiles/asc/themes/q7/datebox/datebox.png.php?t=4&d=[field_ascevents_datetime]\' alt="[title]" title="[title]" width="40" height="45" />';
   $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['external'] = 0;
@@ -582,7 +547,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['field_ascevents_image']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_ascevents_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ascevents_image']['settings'] = array(
-    'image_style' => 'news_thumb',
+    'image_style' => 'news_front_thumb',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_ascevents_image']['field_api_classes'] = 0;
