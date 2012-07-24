@@ -5,6 +5,24 @@
  */
 
 /**
+ * Implements hook_block_class_features_default_class().
+ */
+function asc_events_block_class_features_default_class() {
+  return array(
+    0 => array(
+      'module' => 'views',
+      'delta' => '2790fec824f71409f95f23eb80b8c8a9',
+      'css_classes' => 'grid-3',
+    ),
+    1 => array(
+      'module' => 'views',
+      'delta' => '6267fddf33d11d9a64ac1ac0aa2a9049',
+      'css_classes' => 'grid-6',
+    ),
+  );
+}
+
+/**
  * Implements hook_ctools_plugin_api().
  */
 function asc_events_ctools_plugin_api() {
