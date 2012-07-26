@@ -12,7 +12,7 @@ function asc_events_block_class_features_default_class() {
     0 => array(
       'module' => 'views',
       'delta' => '2790fec824f71409f95f23eb80b8c8a9',
-      'css_classes' => 'grid-3',
+      'css_classes' => 'grid-3 feature-half',
     ),
     1 => array(
       'module' => 'views',
