@@ -51,7 +51,7 @@ function asc_events_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '1',
     'pages' => 'events*',
-    'title' => '',
+    'title' => '<none>',
     'cache' => -1,
   );
 
