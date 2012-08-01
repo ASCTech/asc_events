@@ -12,12 +12,12 @@ function asc_events_block_class_features_default_class() {
     0 => array(
       'module' => 'views',
       'delta' => '2790fec824f71409f95f23eb80b8c8a9',
-      'css_classes' => 'grid-3 feature-half',
+      'css_classes' => 'feature-half',
     ),
     1 => array(
       'module' => 'views',
       'delta' => '6267fddf33d11d9a64ac1ac0aa2a9049',
-      'css_classes' => 'grid-6',
+      'css_classes' => '',
     ),
   );
 }
