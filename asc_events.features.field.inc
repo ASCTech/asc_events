@@ -95,7 +95,7 @@ function asc_events_field_default_fields() {
   $fields['node-asc_event-field_ascevents_datetime'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_ascevents_datetime',
@@ -169,7 +169,7 @@ function asc_events_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_ascevents_datetime',
       'label' => 'Date',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'default_value' => 'now',
         'default_value2' => 'same',
@@ -183,7 +183,7 @@ function asc_events_field_default_fields() {
         'settings' => array(
           'display_all_day' => 1,
           'increment' => '15',
-          'input_format' => 'Y-m-d H:i:s',
+          'input_format' => 'm/d/Y - g:i:sa',
           'input_format_custom' => '',
           'label_position' => 'above',
           'text_parts' => array(),
@@ -284,11 +284,11 @@ function asc_events_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            0 => 0,
             'image' => 'image',
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 0,
           ),
           'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
@@ -327,7 +327,7 @@ function asc_events_field_default_fields() {
               'country' => 'country',
               'country_name' => 'country_name',
               'locpick' => 'locpick',
-              'map_link' => 0,
+              'map_link' => 'map_link',
               'name' => 0,
               'postal_code' => 'postal_code',
               'province' => 'province',
@@ -338,22 +338,22 @@ function asc_events_field_default_fields() {
           'form' => array(
             'fields' => array(
               'additional' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '6',
               ),
               'city' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '8',
               ),
               'country' => array(
-                'collect' => '1',
+                'collect' => '4',
                 'default' => 'us',
                 'weight' => '14',
               ),
               'locpick' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'weight' => '20',
               ),
               'name' => array(
@@ -362,18 +362,18 @@ function asc_events_field_default_fields() {
                 'weight' => '2',
               ),
               'postal_code' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '12',
               ),
               'province' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '10',
                 'widget' => 'autocomplete',
               ),
               'street' => array(
-                'collect' => '1',
+                'collect' => '0',
                 'default' => '',
                 'weight' => '4',
               ),
