@@ -13,6 +13,48 @@ function asc_events_default_fe_block_settings() {
   // q7
   $theme = array();
 
+  $theme['asc_taxonomy_filter-event_terms_1'] = array(
+    'module' => 'asc_taxonomy_filter',
+    'delta' => 'event_terms_1',
+    'theme' => 'q7',
+    'status' => '1',
+    'weight' => '-30',
+    'region' => 'content',
+    'custom' => '0',
+    'visibility' => '1',
+    'pages' => '',
+    'title' => '',
+    'cache' => '1',
+  );
+
+  $theme['asc_taxonomy_filter-event_terms_2'] = array(
+    'module' => 'asc_taxonomy_filter',
+    'delta' => 'event_terms_2',
+    'theme' => 'q7',
+    'status' => '1',
+    'weight' => '0',
+    'region' => 'sidebar',
+    'custom' => '0',
+    'visibility' => '1',
+    'pages' => '',
+    'title' => '',
+    'cache' => '1',
+  );
+
+  $theme['asc_taxonomy_filter-event_terms_3'] = array(
+    'module' => 'asc_taxonomy_filter',
+    'delta' => 'event_terms_3',
+    'theme' => 'q7',
+    'status' => '1',
+    'weight' => '0',
+    'region' => 'sidebar',
+    'custom' => '0',
+    'visibility' => '1',
+    'pages' => '',
+    'title' => '',
+    'cache' => '1',
+  );
+
   $theme['views-2790fec824f71409f95f23eb80b8c8a9'] = array(
     'module' => 'views',
     'delta' => '2790fec824f71409f95f23eb80b8c8a9',
