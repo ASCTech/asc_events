@@ -38,6 +38,7 @@ features[field][] = node-asc_event-field_ascevents_location
 features[field][] = node-asc_event-field_ascevents_terms_1
 features[field][] = node-asc_event-field_ascevents_terms_2
 features[field][] = node-asc_event-field_ascevents_terms_3
+features[image][] = asc_event_page_style
 features[node][] = asc_event
 features[taxonomy][] = event_terms_1
 features[taxonomy][] = event_terms_2
