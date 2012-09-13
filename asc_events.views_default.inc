@@ -57,7 +57,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['field_ascevents_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ascevents_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ascevents_image']['settings'] = array(
-    'image_style' => 'square_thumbnail',
+    'image_style' => 'asc_event_page_style',
     'image_link' => '',
   );
   /* Field: Content: Title */
