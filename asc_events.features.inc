@@ -40,28 +40,6 @@ function asc_events_views_api() {
 }
 
 /**
- * Implements hook_custom_breadcrumbs_config_features_default_settings().
- */
-function asc_events_custom_breadcrumbs_config_features_default_settings() {
-  $custom_breadcrumbs_configs = array();
-
-  $custom_breadcrumbs_configs[] = array(
-    'asc_event-225303992' => array(
-      'name' => 'Events',
-      'machine_name' => 'asc_event-225303992',
-      'titles' => 'Events
-[node:title]',
-      'paths' => 'Events
-[node:url:path]',
-      'visibility_php' => '',
-      'node_type' => 'asc_event',
-      'language' => '',
-    ),
-  );
-  return $custom_breadcrumbs_configs;
-}
-
-/**
  * Implements hook_node_info().
  */
 function asc_events_node_info() {
