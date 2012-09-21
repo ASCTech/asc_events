@@ -56,7 +56,7 @@ function asc_events_taxonomy_default_vocabularies() {
       ),
     ),
     'event_terms_3' => array(
-      'name' => 'Event Terms 3',
+      'name' => 'Events Rename-x',
       'machine_name' => 'event_terms_3',
       'description' => 'Additional vocabulary for Events',
       'hierarchy' => '0',

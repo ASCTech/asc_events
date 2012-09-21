@@ -40,34 +40,25 @@ function asc_events_views_api() {
 }
 
 /**
- * Implements hook_image_default_styles().
+ * Implements hook_custom_breadcrumbs_config_features_default_settings().
  */
-function asc_events_image_default_styles() {
-  $styles = array();
+function asc_events_custom_breadcrumbs_config_features_default_settings() {
+  $custom_breadcrumbs_configs = array();
 
-  // Exported image style: asc_event_page_style.
-  $styles['asc_event_page_style'] = array(
-    'name' => 'asc_event_page_style',
-    'effects' => array(
-      1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => '72',
-          'height' => '72',
-        ),
-        'weight' => '1',
-      ),
+  $custom_breadcrumbs_configs[] = array(
+    'asc_event-225303992' => array(
+      'name' => 'Events',
+      'machine_name' => 'asc_event-225303992',
+      'titles' => 'Events
+[node:title]',
+      'paths' => 'Events
+[node:url:path]',
+      'visibility_php' => '',
+      'node_type' => 'asc_event',
+      'language' => '',
     ),
   );
-
-  return $styles;
+  return $custom_breadcrumbs_configs;
 }
 
 /**
