@@ -43,7 +43,7 @@ function asc_events_field_default_fields() {
       'bundle' => 'asc_event',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Please enter a descriptive summary.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -72,7 +72,7 @@ function asc_events_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Description',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'display_summary' => 1,
         'text_processing' => '1',
@@ -809,6 +809,7 @@ function asc_events_field_default_fields() {
   t('Image');
   t('Image associated with your event.');
   t('Location');
+  t('Please enter a descriptive summary.');
 
   return $fields;
 }

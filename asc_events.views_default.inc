@@ -214,6 +214,28 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'asc_event' => 'asc_event',
+  );
+  /* Filter criterion: Content: Date - end date (field_ascevents_datetime:value2) */
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['id'] = 'field_ascevents_datetime_value2';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['table'] = 'field_data_field_ascevents_datetime';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['field'] = 'field_ascevents_datetime_value2';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'events';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Events';
@@ -631,6 +653,12 @@ function asc_events_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Content: Date - end date (field_ascevents_datetime:value2) */
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['id'] = 'field_ascevents_datetime_value2';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['table'] = 'field_data_field_ascevents_datetime';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['field'] = 'field_ascevents_datetime_value2';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_ascevents_datetime_value2']['default_date'] = 'now';
   $handler->display->display_options['displays'] = array(
     'asc_events_feature_large' => 'asc_events_feature_large',
     'default' => 0,
