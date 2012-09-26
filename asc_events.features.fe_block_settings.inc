@@ -22,7 +22,12 @@ function asc_events_default_fe_block_settings() {
     'region' => 'content',
     'custom' => '0',
     'visibility' => '1',
-    'pages' => 'events*',
+    'pages' => 'events
+events/all*
+events/filter/*
+events/day*
+events/month*
+events/year*',
     'title' => '',
     'cache' => '1',
   );
@@ -32,7 +37,7 @@ function asc_events_default_fe_block_settings() {
     'delta' => 'event_terms_2',
     'theme' => 'q7',
     'status' => '1',
-    'weight' => '-22',
+    'weight' => '-23',
     'region' => 'sidebar',
     'custom' => '0',
     'visibility' => '1',
@@ -46,7 +51,7 @@ function asc_events_default_fe_block_settings() {
     'delta' => 'event_terms_3',
     'theme' => 'q7',
     'status' => '1',
-    'weight' => '-21',
+    'weight' => '-22',
     'region' => 'sidebar',
     'custom' => '0',
     'visibility' => '1',

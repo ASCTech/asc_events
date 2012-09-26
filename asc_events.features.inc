@@ -40,6 +40,48 @@ function asc_events_views_api() {
 }
 
 /**
+ * Implements hook_custom_breadcrumbs_views_config_features_default_settings().
+ */
+function asc_events_custom_breadcrumbs_views_config_features_default_settings() {
+  $custom_breadcrumbs_views_configs = array();
+
+  $custom_breadcrumbs_views_configs[] = array(
+    -2126189683 => array(
+      'name' => 'Events',
+      'machine_name' => '-2126189683',
+      'titles' => 'Events',
+      'paths' => 'events/all',
+      'visibility_php' => '',
+      'views_path' => 'events/day',
+      'language' => '',
+    ),
+  );
+  $custom_breadcrumbs_views_configs[] = array(
+    -1501275758 => array(
+      'name' => 'Events',
+      'machine_name' => '-1501275758',
+      'titles' => 'Events',
+      'paths' => 'events/all',
+      'visibility_php' => '',
+      'views_path' => 'events/all',
+      'language' => '',
+    ),
+  );
+  $custom_breadcrumbs_views_configs[] = array(
+    -101466245 => array(
+      'name' => 'Events',
+      'machine_name' => '-101466245',
+      'titles' => 'Events',
+      'paths' => 'events/all',
+      'visibility_php' => '',
+      'views_path' => 'events',
+      'language' => '',
+    ),
+  );
+  return $custom_breadcrumbs_views_configs;
+}
+
+/**
  * Implements hook_node_info().
  */
 function asc_events_node_info() {

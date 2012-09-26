@@ -15,7 +15,7 @@ function asc_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'block_titlelink_views_2790fec824f71409f95f23eb80b8c8a9';
   $strongarm->value = array(
-    'url' => 'events',
+    'url' => 'events/all',
     'display' => 1,
     'title' => '',
   );
@@ -26,7 +26,7 @@ function asc_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'block_titlelink_views_6267fddf33d11d9a64ac1ac0aa2a9049';
   $strongarm->value = array(
-    'url' => 'events',
+    'url' => 'events/all',
     'display' => 1,
     'title' => '',
   );
