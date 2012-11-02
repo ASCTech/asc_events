@@ -47,7 +47,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['label'] = 'No Results';
-  $handler->display->display_options['empty']['area']['content'] = 'There are no events for the selected period. Please check back for more event information!';
+  $handler->display->display_options['empty']['area']['content'] = 'Please check back for more event information!';
   $handler->display->display_options['empty']['area']['format'] = 'html';
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_ascevents_image']['id'] = 'field_ascevents_image';
