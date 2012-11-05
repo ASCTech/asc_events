@@ -42,7 +42,7 @@ function asc_events_views_api() {
 /**
  * Implements hook_custom_breadcrumbs_config_features_default_settings().
  */
-function asc_people_custom_breadcrumbs_config_features_default_settings() {
+function asc_events_custom_breadcrumbs_config_features_default_settings() {
   $custom_breadcrumbs_configs = array();
 
   $custom_breadcrumbs_configs[] = array(
