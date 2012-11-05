@@ -130,15 +130,6 @@ function asc_events_node_info() {
   );
   return $items;
 }
-  );
-  $custom_breadcrumbs_views_configs[] = array(
-    -101466245 => array(),
-  );
-  $custom_breadcrumbs_views_configs[] = array(
-    -101466245 => array(),
-  );
-  return $custom_breadcrumbs_views_configs;
-}
 
 /**
  * Implements hook_node_info().
