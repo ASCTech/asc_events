@@ -126,5 +126,47 @@ function asc_events_strongarm() {
   $strongarm->value = 'events/filter/[term:tid]';
   $export['pathauto_taxonomy_term_event_terms_3_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_event_terms_1';
+  $strongarm->value = (object) array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'news_terms_1',
+    'view_name' => 'asc_events',
+    'display' => 'asc_events_page',
+    'status' => 1,
+  );
+  $export['tvi_vocab_news_terms_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_event_terms_2';
+  $strongarm->value = (object) array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'news_terms_2',
+    'view_name' => 'asc_events',
+    'display' => 'asc_events_page',
+    'status' => 1,
+  );
+  $export['tvi_vocab_news_terms_2'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_event_terms_3';
+  $strongarm->value = (object) array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'news_terms_3',
+    'view_name' => 'asc_events',
+    'display' => 'asc_events_page',
+    'status' => 1,
+  );
+  $export['tvi_vocab_news_terms_3'] = $strongarm;
+
   return $export;
 }

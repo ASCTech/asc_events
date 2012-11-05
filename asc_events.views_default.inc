@@ -22,7 +22,6 @@ function asc_events_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['css_class'] = 'features';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
@@ -42,6 +41,10 @@ function asc_events_views_default_views() {
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -57,7 +60,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['field_ascevents_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ascevents_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ascevents_image']['settings'] = array(
-    'image_style' => 'asc_event_page_style',
+    'image_style' => 'sliderthumb',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -111,7 +114,7 @@ function asc_events_views_default_views() {
   );
 
   /* Display: Month */
-  $handler = $view->new_display('page', 'Month', 'page_1');
+  $handler = $view->new_display('page', 'Month', 'asc_events_page_month');
   $handler->display->display_options['display_description'] = 'Events from a particular month.';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -283,7 +286,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
 
   /* Display: Year */
-  $handler = $view->new_display('page', 'Year', 'page_2');
+  $handler = $view->new_display('page', 'Year', 'asc_events_page_year');
   $handler->display->display_options['display_description'] = 'Events on a single day.';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
@@ -407,6 +410,14 @@ function asc_events_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'All Events';
+  $handler->display->display_options['header']['area']['content'] = '<a href="/events" title="See All Events">See all events</a>';
+  $handler->display->display_options['header']['area']['format'] = 'html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -482,7 +493,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['field_ascevents_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ascevents_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_ascevents_image']['settings'] = array(
-    'image_style' => 'asc_event_page_style',
+    'image_style' => 'sliderthumb',
     'image_link' => '',
   );
   /* Field: Content: Title */
@@ -580,6 +591,8 @@ function asc_events_views_default_views() {
 
   /* Display: Small Feature */
   $handler = $view->new_display('block', 'Small Feature', 'asc_events_feature_small');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -666,6 +679,8 @@ function asc_events_views_default_views() {
 
   /* Display: Large Feature Right */
   $handler = $view->new_display('attachment', 'Large Feature Right', 'asc_events_feature_right');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -792,7 +807,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
