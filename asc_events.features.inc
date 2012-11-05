@@ -130,20 +130,3 @@ function asc_events_node_info() {
   );
   return $items;
 }
-
-/**
- * Implements hook_node_info().
- */
-function asc_events_node_info() {
-  $items = array(
-    'asc_event' => array(
-      'name' => t('Event'),
-      'base' => 'node_content',
-      'description' => t('Events for your organization.'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-  );
-  return $items;
-}
