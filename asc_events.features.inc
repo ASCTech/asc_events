@@ -40,16 +40,99 @@ function asc_events_views_api() {
 }
 
 /**
+ * Implements hook_custom_breadcrumbs_config_features_default_settings().
+ */
+function asc_people_custom_breadcrumbs_config_features_default_settings() {
+  $custom_breadcrumbs_configs = array();
+
+  $custom_breadcrumbs_configs[] = array(
+    'asc_events-1689872192' => array(
+      'name' => 'Events',
+      'machine_name' => 'asc_events-1689872192',
+      'titles' => 'Events
+[node:title]',
+      'paths' => 'events
+[node:url:path]',
+      'visibility_php' => '',
+      'node_type' => 'asc_events',
+      'language' => '',
+    ),
+  );
+  return $custom_breadcrumbs_configs;
+}
+
+/**
  * Implements hook_custom_breadcrumbs_views_config_features_default_settings().
  */
 function asc_events_custom_breadcrumbs_views_config_features_default_settings() {
   $custom_breadcrumbs_views_configs = array();
 
   $custom_breadcrumbs_views_configs[] = array(
-    -2126189683 => array(),
+    -124 => array(
+      'name' => 'events',
+      'machine_name' => 'asc_events-1670042653',
+      'titles' => 'Events',
+      'paths' => 'events',
+      'visibility_php' => '',
+      'views_path' => 'events',
+      'language' => '',
+    ),
   );
   $custom_breadcrumbs_views_configs[] = array(
-    -1501275758 => array(),
+    -1501275758 => array(
+      'name' => 'Events Day',
+      'machine_name' => 'asc_events-day-1670042653',
+      'titles' => 'Events',
+      'paths' => 'events',
+      'visibility_php' => '',
+      'views_path' => 'events/day',
+      'language' => '',
+    ),
+  );
+  $custom_breadcrumbs_views_configs[] = array(
+    -1501275758 => array(
+      'name' => 'Events Month',
+      'machine_name' => 'asc_events-month-1670042653',
+      'titles' => 'Events',
+      'paths' => 'events',
+      'visibility_php' => '',
+      'views_path' => 'events/month',
+      'language' => '',
+    ),
+  );
+  $custom_breadcrumbs_views_configs[] = array(
+    -101466245 => array(
+      'name' => 'Events Year',
+      'machine_name' => 'asc_events-year-1670042653',
+      'titles' => 'Events',
+      'paths' => 'events',
+      'visibility_php' => '',
+      'views_path' => 'events/year',
+      'language' => '',
+    ),
+  );
+  return $custom_breadcrumbs_views_configs;
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function asc_events_node_info() {
+  $items = array(
+    'asc_event' => array(
+      'name' => t('Event'),
+      'base' => 'node_content',
+      'description' => t('Events for your organization.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}
+  );
+  $custom_breadcrumbs_views_configs[] = array(
+    -101466245 => array(),
   );
   $custom_breadcrumbs_views_configs[] = array(
     -101466245 => array(),
