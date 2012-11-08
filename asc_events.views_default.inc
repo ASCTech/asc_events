@@ -417,7 +417,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'All Events';
-  $handler->display->display_options['header']['area']['content'] = '<a href="/events" title="See All Events">See all events</a>';
+  $handler->display->display_options['header']['area']['content'] = '';
   $handler->display->display_options['header']['area']['format'] = 'html';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
