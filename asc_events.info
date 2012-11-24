@@ -7,7 +7,6 @@ project = asc_events
 dependencies[] = asc_taxonomy_filter
 dependencies[] = block_class
 dependencies[] = calendar
-dependencies[] = custom_breadcrumbs_views
 dependencies[] = date
 dependencies[] = date_views
 dependencies[] = date_all_day
