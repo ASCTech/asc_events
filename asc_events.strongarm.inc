@@ -42,9 +42,64 @@ function asc_events_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_long';
+  $strongarm->value = 'l, F j, Y - g:ia';
+  $export['date_format_long'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_medium';
+  $strongarm->value = 'D, m/d/Y - g:ia';
+  $export['date_format_medium'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'm/d/Y - g:ia';
+  $export['date_format_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__asc_event';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_rotor_short' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_rotor_tall' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_text' => array(
+        'custom_settings' => FALSE,
+      ),
+      'front_quick_text' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -109,64 +164,22 @@ function asc_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_event_terms_1_pattern';
-  $strongarm->value = 'events/filter/[term:tid]';
+  $strongarm->value = 'events/filters/[term:tid]';
   $export['pathauto_taxonomy_term_event_terms_1_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_event_terms_2_pattern';
-  $strongarm->value = 'events/filter/[term:tid]';
+  $strongarm->value = 'events/filters/[term:tid]';
   $export['pathauto_taxonomy_term_event_terms_2_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_event_terms_3_pattern';
-  $strongarm->value = 'events/filter/[term:tid]';
+  $strongarm->value = 'events/filters/[term:tid]';
   $export['pathauto_taxonomy_term_event_terms_3_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'tvi_vocab_event_terms_1';
-  $strongarm->value = (object) array(
-    'is_default' => TRUE,
-    'type' => 'vocab',
-    'xid' => 'news_terms_1',
-    'view_name' => 'asc_events',
-    'display' => 'asc_events_page',
-    'status' => 1,
-  );
-  $export['tvi_vocab_news_terms_1'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'tvi_vocab_event_terms_2';
-  $strongarm->value = (object) array(
-    'is_default' => TRUE,
-    'type' => 'vocab',
-    'xid' => 'news_terms_2',
-    'view_name' => 'asc_events',
-    'display' => 'asc_events_page',
-    'status' => 1,
-  );
-  $export['tvi_vocab_news_terms_2'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'tvi_vocab_event_terms_3';
-  $strongarm->value = (object) array(
-    'is_default' => TRUE,
-    'type' => 'vocab',
-    'xid' => 'news_terms_3',
-    'view_name' => 'asc_events',
-    'display' => 'asc_events_page',
-    'status' => 1,
-  );
-  $export['tvi_vocab_news_terms_3'] = $strongarm;
 
   return $export;
 }
