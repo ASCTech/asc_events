@@ -14,8 +14,8 @@ function asc_events_user_default_permissions() {
   $permissions['create asc_event content'] = array(
     'name' => 'create asc_event content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
       'Content Editor' => 'Content Editor',
+      'Content Manager' => 'Content Manager',
       'Site Administrator' => 'Site Administrator',
     ),
     'module' => 'node',
