@@ -649,7 +649,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['field_ascevents_datetime']['field'] = 'field_ascevents_datetime';
   $handler->display->display_options['fields']['field_ascevents_datetime']['label'] = '';
   $handler->display->display_options['fields']['field_ascevents_datetime']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['text'] = '<img src=\'/profiles/asc/themes/q7/datebox/datebox.png.php?t=5&d=[field_ascevents_datetime]\' alt="[title]" title="[title]" width="40" height="45" />';
+  $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['text'] = '<img src="/profiles/asc/themes/q7/datebox/datebox.png.php?t=5&d=[field_ascevents_datetime]" alt="[field_ascevents_datetime]" title="[field_ascevents_datetime]" width="40" height="45" />';
   $handler->display->display_options['fields']['field_ascevents_datetime']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_ascevents_datetime']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ascevents_datetime']['element_default_classes'] = FALSE;
@@ -668,7 +668,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<img src="/profiles/asc/themes/q7/datebox/datebox.png.php?t=5&d=[field_ascevents_datetime]" alt="[field_ascevents_datetime]" width="40" height="45" />';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<img src="/profiles/asc/themes/q7/datebox/datebox.png.php?t=5&d=[field_ascevents_datetime]" alt="[field_ascevents_datetime]" title="[field_ascevents_datetime]" width="40" height="45" />';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
