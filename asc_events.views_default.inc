@@ -23,7 +23,7 @@ function asc_events_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events Calendar';
-  $handler->display->display_options['css_class'] = 'features';
+  $handler->display->display_options['css_class'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = '+';
@@ -631,6 +631,7 @@ function asc_events_views_default_views() {
   $handler = $view->new_display('block', 'Small Feature', 'asc_events_feature_small');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Events';
+  $handler->display->display_options['defaults']['css_class'] = 'features';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -818,6 +819,7 @@ function asc_events_views_default_views() {
   /* Display: Large Feature */
   $handler = $view->new_display('block', 'Large Feature', 'asc_events_feature_large');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = 'features';
   $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
