@@ -284,11 +284,11 @@ function asc_events_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            0 => 0,
             'image' => 'image',
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 0,
           ),
           'browser_plugins' => array(),
           'progress_indicator' => 'throbber',
@@ -607,9 +607,9 @@ function asc_events_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
+          'module' => 'asc_taxonomy_filter',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'asc_taxonomy_filter_term_reference_link',
           'weight' => '5',
         ),
         'full' => array(
@@ -685,9 +685,9 @@ function asc_events_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
+          'module' => 'asc_taxonomy_filter',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'asc_taxonomy_filter_term_reference_link',
           'weight' => '6',
         ),
         'full' => array(
@@ -763,9 +763,9 @@ function asc_events_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
+          'module' => 'asc_taxonomy_filter',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'asc_taxonomy_filter_term_reference_link',
           'weight' => '7',
         ),
         'full' => array(
