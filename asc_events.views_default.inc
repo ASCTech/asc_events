@@ -23,7 +23,7 @@ function asc_events_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events Calendar';
-  $handler->display->display_options['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'features-list features';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = '+';
