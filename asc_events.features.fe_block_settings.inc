@@ -27,8 +27,8 @@ events/filter*',
     'roles' => array(),
     'themes' => array(
       'q7' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'q7',
         'weight' => -32,
       ),
