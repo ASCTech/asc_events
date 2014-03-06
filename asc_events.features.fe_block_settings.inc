@@ -10,131 +10,145 @@
 function asc_events_default_fe_block_settings() {
   $export = array();
 
-  $export['version'] = '1.0';
+  $export['version'] = '2.0';
 
-  // Theme independent visibility settings.
-  $export['visibility'] = array(
-    'asc_taxonomy_filter-event_terms_1' => array(
-      'delta' => 'event_terms_1',
-      'module' => 'asc_taxonomy_filter',
-    ),
-    'asc_taxonomy_filter-event_terms_2' => array(
-      'delta' => 'event_terms_2',
-      'module' => 'asc_taxonomy_filter',
-    ),
-    'asc_taxonomy_filter-event_terms_3' => array(
-      'delta' => 'event_terms_3',
-      'module' => 'asc_taxonomy_filter',
-    ),
-    'views-2790fec824f71409f95f23eb80b8c8a9' => array(
-      'delta' => '2790fec824f71409f95f23eb80b8c8a9',
-      'module' => 'views',
-    ),
-    'views-6267fddf33d11d9a64ac1ac0aa2a9049' => array(
-      'delta' => '6267fddf33d11d9a64ac1ac0aa2a9049',
-      'module' => 'views',
-    ),
-    'views-asc_events-asc_events_cal_block' => array(
-      'delta' => 'asc_events-asc_events_cal_block',
-      'module' => 'views',
-    ),
-  );
-
-  // q7
-  $theme = array();
-
-  $theme['asc_taxonomy_filter-event_terms_1'] = array(
-    'module' => 'asc_taxonomy_filter',
+  $export['asc_taxonomy_filter-event_terms_1'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
     'delta' => 'event_terms_1',
-    'theme' => 'q7',
-    'status' => '1',
-    'weight' => '-30',
-    'region' => 'content',
-    'custom' => '0',
-    'visibility' => '1',
-    'pages' => 'events*',
+    'module' => 'asc_taxonomy_filter',
+    'node_types' => array(),
+    'pages' => 'events
+events/day*
+events/month*
+events/year*
+events/filter*',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'q7',
+        'weight' => -32,
+      ),
+    ),
     'title' => '',
-    'cache' => '1',
+    'visibility' => 1,
   );
 
-  $theme['asc_taxonomy_filter-event_terms_2'] = array(
-    'module' => 'asc_taxonomy_filter',
+  $export['asc_taxonomy_filter-event_terms_2'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
     'delta' => 'event_terms_2',
-    'theme' => 'q7',
-    'status' => '1',
-    'weight' => '-15',
-    'region' => 'sidebar',
-    'custom' => '0',
-    'visibility' => '1',
-    'pages' => 'events*',
-    'title' => '',
-    'cache' => '1',
-  );
-
-  $theme['asc_taxonomy_filter-event_terms_3'] = array(
     'module' => 'asc_taxonomy_filter',
+    'node_types' => array(),
+    'pages' => 'events
+events/day*
+events/month*
+events/year*
+events/filter*',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'q7',
+        'weight' => -17,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 1,
+  );
+
+  $export['asc_taxonomy_filter-event_terms_3'] = array(
+    'cache' => 1,
+    'css_class' => '',
+    'custom' => 0,
     'delta' => 'event_terms_3',
-    'theme' => 'q7',
-    'status' => '1',
-    'weight' => '-14',
-    'region' => 'sidebar',
-    'custom' => '0',
-    'visibility' => '1',
-    'pages' => 'events*',
+    'module' => 'asc_taxonomy_filter',
+    'node_types' => array(),
+    'pages' => 'events
+events/day*
+events/month*
+events/year*
+events/filter*',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'q7',
+        'weight' => -16,
+      ),
+    ),
     'title' => '',
-    'cache' => '1',
+    'visibility' => 1,
   );
 
-  $theme['views-2790fec824f71409f95f23eb80b8c8a9'] = array(
-    'module' => 'views',
+  $export['views-2790fec824f71409f95f23eb80b8c8a9'] = array(
+    'cache' => -1,
+    'css_class' => 'feature-half',
+    'custom' => 0,
     'delta' => '2790fec824f71409f95f23eb80b8c8a9',
-    'theme' => 'q7',
-    'status' => '1',
-    'weight' => '0',
-    'region' => 'postscript_second',
-    'custom' => '0',
-    'visibility' => '1',
+    'module' => 'views',
+    'node_types' => array(),
     'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'q7',
+        'weight' => 0,
+      ),
+    ),
     'title' => '',
-    'cache' => -1,
+    'visibility' => 1,
   );
 
-  $theme['views-6267fddf33d11d9a64ac1ac0aa2a9049'] = array(
-    'module' => 'views',
+  $export['views-6267fddf33d11d9a64ac1ac0aa2a9049'] = array(
+    'cache' => -1,
+    'css_class' => 'feature-whole',
+    'custom' => 0,
     'delta' => '6267fddf33d11d9a64ac1ac0aa2a9049',
-    'theme' => 'q7',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-  );
-
-  $theme['views-asc_events-asc_events_cal_block'] = array(
     'module' => 'views',
-    'delta' => 'asc_events-asc_events_cal_block',
-    'theme' => 'q7',
-    'status' => '1',
-    'weight' => '-18',
-    'region' => 'sidebar',
-    'custom' => '0',
-    'visibility' => '1',
-    'pages' => 'event*',
-    'title' => '<none>',
-    'cache' => -1,
+    'node_types' => array(),
+    'pages' => '<front>',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'q7',
+        'weight' => -33,
+      ),
+    ),
+    'title' => 'Events',
+    'visibility' => 1,
   );
 
-  $export['theme']['q7'] = $theme;
+  $export['views-asc_events-asc_events_cal_block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => 0,
+    'delta' => 'asc_events-asc_events_cal_block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'event*',
+    'roles' => array(),
+    'themes' => array(
+      'q7' => array(
+        'region' => 'sidebar',
+        'status' => 1,
+        'theme' => 'q7',
+        'weight' => -30,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 1,
+  );
 
-  $theme_default = variable_get('theme_default', 'garland');
-  $themes = list_themes();
-  foreach ($export as $theme_key => $settings) {
-    if ($theme_key != $theme_default && empty($themes[$theme_key]->status)) {
-      unset($export['theme'][$theme_key]);
-    }
-  }
   return $export;
 }

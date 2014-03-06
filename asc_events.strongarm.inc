@@ -15,7 +15,7 @@ function asc_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'block_titlelink_views_2790fec824f71409f95f23eb80b8c8a9';
   $strongarm->value = array(
-    'url' => 'events/all',
+    'url' => 'events',
     'display' => 1,
     'title' => '',
   );
@@ -26,7 +26,7 @@ function asc_events_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'block_titlelink_views_6267fddf33d11d9a64ac1ac0aa2a9049';
   $strongarm->value = array(
-    'url' => 'events/all',
+    'url' => 'events',
     'display' => 1,
     'title' => '',
   );
@@ -157,29 +157,8 @@ function asc_events_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_asc_event_pattern';
-  $strongarm->value = 'event/[node:title]';
+  $strongarm->value = 'events/[node:title]';
   $export['pathauto_node_asc_event_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_event_terms_1_pattern';
-  $strongarm->value = 'events/filters/[term:tid]';
-  $export['pathauto_taxonomy_term_event_terms_1_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_event_terms_2_pattern';
-  $strongarm->value = 'events/filters/[term:tid]';
-  $export['pathauto_taxonomy_term_event_terms_2_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_event_terms_3_pattern';
-  $strongarm->value = 'events/filters/[term:tid]';
-  $export['pathauto_taxonomy_term_event_terms_3_pattern'] = $strongarm;
 
   return $export;
 }

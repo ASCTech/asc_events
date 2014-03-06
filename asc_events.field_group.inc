@@ -31,7 +31,7 @@ function asc_events_field_group_info() {
     'format_settings' => array(
       'label' => 'Terms',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-terms field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

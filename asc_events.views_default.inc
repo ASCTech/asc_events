@@ -22,7 +22,7 @@ function asc_events_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Events Calendar';
+  $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['css_class'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
@@ -173,6 +173,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_ascevents_datetime.field_ascevents_datetime_value' => 'field_data_field_ascevents_datetime.field_ascevents_datetime_value',
@@ -258,6 +259,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -345,6 +347,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -456,6 +459,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_ascevents_datetime.field_ascevents_datetime_value' => 'field_data_field_ascevents_datetime.field_ascevents_datetime_value',
@@ -588,6 +592,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -619,10 +624,10 @@ function asc_events_views_default_views() {
     'field_data_field_ascevents_datetime.field_ascevents_datetime_value2' => 'field_data_field_ascevents_datetime.field_ascevents_datetime_value2',
   );
   $handler->display->display_options['path'] = 'events';
-  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Month';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Calendar';
   $handler->display->display_options['tab_options']['weight'] = '0';
@@ -631,7 +636,8 @@ function asc_events_views_default_views() {
   $handler = $view->new_display('block', 'Small Feature', 'asc_events_feature_small');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Events';
-  $handler->display->display_options['defaults']['css_class'] = 'features';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'features';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -819,7 +825,8 @@ function asc_events_views_default_views() {
   /* Display: Large Feature */
   $handler = $view->new_display('block', 'Large Feature', 'asc_events_feature_large');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['css_class'] = 'features';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'feature-whole features';
   $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -856,7 +863,7 @@ function asc_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -910,6 +917,48 @@ function asc_events_views_default_views() {
     'asc_event' => 'asc_event',
   );
   $handler->display->display_options['block_description'] = 'Events Large Feature';
+  $translatables['asc_events'] = array(
+    t('Master'),
+    t('Events'),
+    t('+'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('No Results'),
+    t('Please check back for more event information!'),
+    t('Event'),
+    t('When'),
+    t('Where'),
+    t('Month'),
+    t('Events from a particular month.'),
+    t('more'),
+    t('All'),
+    t('Day'),
+    t('Events on a single day.'),
+    t('Year'),
+    t('Calendar Block'),
+    t('Calendar Block for Events Page'),
+    t('All Events'),
+    t('Events Calendar Block'),
+    t('Upcoming'),
+    t('Events by Month'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('«'),
+    t('‹'),
+    t('›'),
+    t('»'),
+    t('Small Feature'),
+    t('<img src="/profiles/asc/themes/q7/datebox/datebox.png.php?t=5&d=[field_ascevents_datetime]" alt="[field_ascevents_datetime]" title="[field_ascevents_datetime]" width="40" height="45" />'),
+    t('Events Small Feature'),
+    t('Large Feature Right'),
+    t('Large Feature'),
+    t('Upcoming events block'),
+    t('Events Large Feature'),
+  );
   $export['asc_events'] = $view;
 
   return $export;
