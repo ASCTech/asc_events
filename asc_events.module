@@ -5,3 +5,89 @@
  */
 
 include_once 'asc_events.features.inc';
+
+/**
+ * Implements hook_osu_rss_register_feed().
+ */
+function asc_events_osu_rss_register_feed() {
+  $channel = new stdClass();
+  $channel->title = t('Events Feed');
+  $channel->item_count = 25;
+  $channel->content_type = 'asc_event';
+  $channel->url_arg = 'events';
+  $channel->description = t('Feed of events for !site_name', array('!site_name' => variable_get('site_name', 'this website')));
+  $channel->namespaces = array(
+    'ev' => 'http://purl.org/rss/1.0/modules/event/',
+    'content' => 'http://purl.org/rss/1.0/modules/content/',
+    'media' => 'http://search.yahoo.com/mrss/',
+  );
+  $channel->order_by = 'field_ascevents_datetime';
+  $channel->order_by_direction = 'DESC';
+  return $channel;
+}
+
+/**
+ * Preprocessor function for RSS items.
+ */
+function asc_events_preprocess_rss_item(&$item, $node) {
+  $fields = array();
+
+  // Add location.
+  $field    = field_get_items('node', $node, 'field_ascevents_location');
+  $fields[] = array('name' => 'ev:location', 'value' => $value);
+
+
+  // Add body.
+  $field    = field_get_items('node', $node, 'body');
+  $value    = osu_rss_sanitize($field[0]['value'], $field[0]['format']);
+  if (!empty($value)) {
+    $value = '<![CDATA[' . $value . ']]>';
+    $fields[] = array('name' => 'content:encoded', 'value' => $value);
+  }
+
+  // Add start/end dates.
+  $field    = field_get_items('node', $node, 'field_ascevents_datetime');
+  if (isset($field[0]['value']) && !empty($field[0]['value'])) {
+    $fields[] = array(
+      'name' => 'ev:startdate',
+      'value' => osu_rss_format_date(strtotime($field[0]['value']), 'c'),
+    );
+  }
+  if (isset($field[0]['value2']) && !empty($field[0]['value2'])) {
+    $fields[] = array(
+      'name' => 'ev:enddate',
+      'value' => osu_rss_format_date(strtotime($field[0]['value2']), 'c'),
+    );
+  }
+
+  // Use teaser for description.
+  $field    = field_get_items('node', $node, 'body');
+  $value    = osu_rss_sanitize(strip_tags($field[0]['summary']));
+  $item->description = $value;
+
+  // Handle images.
+  if ($image = osu_rss_item_image($node, 'field_ascevents_image', '250_square_thumbnail')) {
+    $fields[] = $image;
+  }
+
+  $tids = array();
+  $term_fields = array(
+    'field_ascevents_terms_1', 
+    'field_ascevents_terms_2', 
+    'field_ascevents_terms_3'
+  );
+  foreach ($term_fields as $field) {
+    $values = field_get_items('node', $node, $field);
+    foreach ($values as $value) {
+      $tids[] = $values['tid'];
+    }
+  }
+  $terms = taxonomy_term_load_multiple($tids);
+  foreach ($terms as $term) {
+    $fields[] = array(
+      'name' => 'category',
+      'value' => trim($term->name),
+    );
+  }
+
+}
