@@ -17,6 +17,7 @@ dependencies[] = field_group
 dependencies[] = location_cck
 dependencies[] = media
 dependencies[] = node
+dependencies[] = osu_rss
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = views
